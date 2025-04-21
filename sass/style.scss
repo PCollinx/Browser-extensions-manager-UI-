@@ -1,0 +1,450 @@
+// Import dependencies
+@import "fonts";
+@import "variables";
+@import "mixins";
+
+// General styles
+body {
+  font-family: "Noto Sans", sans-serif;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+  background-color: $neutral-900;
+  color: $neutral-0;
+}
+
+// Container
+.container {
+  max-width: 1200px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 2rem 3rem;
+
+  @include small-screen {
+    padding: 1rem 2rem;
+  }
+  @include small-mobile {
+    padding: 0.5rem 1rem;
+  }
+}
+
+// Navigation
+.nav {
+  height: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0.6rem;
+  border-radius: 15px;
+  background-color: $neutral-700;
+  margin-bottom: 3rem;
+  flex-wrap: nowrap; // Prevent wrapping of child elements
+
+  &__logo {
+    display: flex;
+    align-items: center;
+
+    &-img {
+      width: 150px;
+      height: auto;
+      filter: invert(1) sepia(1) saturate(5) hue-rotate(200deg);
+      transition: color 0.3s ease;
+
+      &:hover {
+        fill: $neutral-100;
+      }
+    }
+  }
+
+  &__option {
+    width: 45px;
+    height: 45px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    border-radius: 15px;
+    cursor: pointer;
+    background-color: $neutral-600;
+    transition: background-color 0.3s ease-in-out;
+
+    &:focus {
+      outline: 2px solid $red-500;
+      outline-offset: 1.5px;
+    }
+
+    &-theme {
+      width: 24px;
+      height: 24px;
+      // display: inline-block;
+      // fill: $neutral-0;
+    }
+  }
+
+  @include small-screen {
+    flex-wrap: nowrap; // Prevent wrapping on small screens
+    flex-direction: row; // Ensure row layout
+    justify-content: space-between;
+
+    &__logo {
+      margin-bottom: 0; // Remove any bottom margin
+    }
+
+    &__option {
+      width: 35px;
+      height: 35px;
+    }
+  }
+
+  @include small-mobile {
+    flex-wrap: nowrap; // Prevent wrapping on very small screens
+    flex-direction: row; // Ensure row layout
+    justify-content: space-between;
+
+    &__logo {
+      margin-bottom: 0; // Remove any bottom margin
+
+      &-img {
+        width: 120px; // Reduce logo size for very small screens
+      }
+    }
+
+    &__option {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  margin-bottom: 1rem;
+
+  @include small-mobile {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    color: $neutral-0;
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    &-button {
+      background-color: $neutral-700;
+      color: $neutral-200;
+      outline: 1px solid $neutral-600;
+      padding: 0.5rem 0.7rem;
+      border-radius: 13px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: $neutral-600;
+      }
+
+      &:focus {
+        outline: 2px solid $red-400;
+        outline-offset: 1px;
+      }
+
+      &.active {
+        background-color: $red-400;
+        color: $neutral-700;
+      }
+    }
+  }
+
+  @include small-screen {
+    h1 {
+      font-size: 1.2rem;
+    }
+
+    &__buttons {
+      flex-wrap: wrap;
+    }
+  }
+
+  @include small-mobile {
+    flex-direction: column;
+    align-items: flex-start;
+
+    h1 {
+      font-size: 1rem; // Reduce font size
+    }
+  }
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); // 3 columns of equal width
+  grid-template-rows: repeat(4, auto); // 4 rows with automatic height
+  gap: 0.7rem; // Space between grid items
+
+  .card {
+    min-height: 130px;
+    background-color: $neutral-700;
+    border-radius: 10px;
+    padding: 0.7rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    color: $neutral-0;
+    .card {
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    &__details {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+      align-items: flex-start;
+
+      &-icon {
+        img {
+          width: 50px;
+          height: 50px;
+        }
+      }
+
+      &-text {
+        text-align: left;
+        h2 {
+          font-size: 1rem;
+          font-weight: 700;
+          line-height: 0%;
+        }
+
+        p {
+          font-size: 12px;
+          color: $neutral-300;
+        }
+      }
+    }
+
+    @include small-screen {
+      min-height: 100px; // Reduce card height
+      padding: 0.5rem;
+    }
+
+    @include small-mobile {
+      min-height: 80px; // Further reduce card height
+      padding: 0.3rem;
+    }
+  }
+
+  @include small-screen {
+    grid-template-columns: repeat(2, 1fr); // 2 columns instead of 3
+    gap: 0.5rem;
+  }
+
+  @include small-mobile {
+    grid-template-columns: 1fr; // Single column layout
+    gap: 0.3rem;
+  }
+}
+
+// Toggle
+.toggle {
+  display: flex;
+  justify-content: space-between;
+
+  &__remove {
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $neutral-800;
+    outline: 1px solid $neutral-600;
+    color: $neutral-200;
+    padding: 0.5rem 0.7rem;
+    border-radius: 13px;
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:focus {
+      outline: 2px solid $red-500;
+      outline-offset: 2px;
+    }
+    &:hover {
+      background-color: $red-400;
+      color: $neutral-700;
+    }
+
+    &:active {
+      background-color: $neutral-800;
+      color: $neutral-0;
+    }
+  }
+
+  &__button {
+    width: 40px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    background-color: $neutral-800;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    padding: 0;
+
+    &:focus {
+      outline: 2px solid $red-500;
+      outline-offset: 1px;
+    }
+  }
+
+  &__icon {
+    transition: opacity 0.3s ease;
+    background-color: $neutral-0;
+    width: 20px;
+    height: 18px;
+    border-radius: 50%;
+    cursor: pointer;
+
+    &--sun {
+      opacity: 1; // Initially visible
+    }
+
+    &--moon {
+      opacity: 0; // Initially hidden
+    }
+  }
+
+  &__button.active {
+    background-color: $red-400;
+
+    .toggle__icon--sun {
+      opacity: 0; // Hide sun icon
+    }
+
+    .toggle__icon--moon {
+      opacity: 1; // Show moon icon
+    }
+  }
+
+  @include small-mobile {
+    &__button {
+      width: 30px;
+      height: 15px;
+    }
+
+    &__icon {
+      width: 15px;
+      height: 15px;
+    }
+  }
+}
+
+// Attribution
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-top: 2rem;
+
+  a {
+    color: hsl(228, 45%, 44%);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+// Light Theme
+
+body.light-theme {
+  background-color: $neutral-200;
+  color: $neutral-900;
+  .nav {
+    background-color: $neutral-0;
+
+    &__logo-img {
+      filter: none;
+    }
+
+    &__option {
+      background-color: $neutral-200;
+
+      &:hover {
+        background-color: $neutral-300;
+      }
+    }
+  }
+
+  .header {
+    &__buttons-button {
+      background-color: $neutral-0;
+      color: $neutral-900;
+      outline: 1px solid $neutral-300;
+
+      &:hover {
+        color: $neutral-300;
+      }
+
+      &:focus {
+        outline: 1px solid $red-400;
+        outline-offset: 2px;
+      }
+
+      &.active {
+        background-color: $red-400;
+        color: $neutral-700;
+        outline: 1px solid $red-500;
+      }
+    }
+    h1 {
+      color: $neutral-900;
+    }
+  }
+
+  .card {
+    background-color: $neutral-0;
+    color: $neutral-900;
+
+    &__details-text p {
+      color: $neutral-600;
+    }
+  }
+
+  .toggle {
+    &__remove {
+      background-color: $neutral-200;
+      color: $neutral-900;
+      outline: 1px solid $neutral-300;
+
+      &:focus {
+        outline: 1px solid $red-400;
+        outline-offset: 1px;
+      }
+    }
+
+    &__button {
+      background-color: $neutral-200;
+    }
+    &__button.active {
+      background-color: $red-400;
+      outline: 1px solid $neutral-600;
+
+      &:hover {
+        outline: none;
+      }
+    }
+  }
+}

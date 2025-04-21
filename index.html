@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link rel="stylesheet" href="./sass/style.scss" />
+    <script type="module" src="script.js"></script>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <title>Frontend Mentor | Browser extensions manager UI</title>
+  </head>
+  <body>
+    <section>
+      <div class="container">
+        <div class="nav">
+          <div class="nav__logo">
+            <img
+              src="./assets/images/logo.svg"
+              alt="Logo"
+              class="nav__logo-img"
+            />
+          </div>
+
+          <button class="nav__option">
+            <img
+              src="./assets/images/icon-sun.svg"
+              alt="Toggle light/dark theme"
+              class="nav__option-theme" id="theme-toggle"
+            />
+          </button>
+        </div>
+        <section class="content">
+          <div class="header">
+            <h1>Extensions List</h1>
+            <div class="header__buttons">
+              <button class="header__buttons-button active">All</button>
+              <button class="header__buttons-button">Active</button>
+              <button class="header__buttons-button">Inactive</button>
+            </div>
+          </div>
+          <div class="cards">
+            <div class="card">
+              <div class="card__details">
+                <div class="card__details-icon">
+                  <img
+                    src="./assets/images/logo-devlens.svg"
+                    alt="Extension icon"
+                    class="card__details-icon-img"
+                  />
+                </div>
+                <div class="card__details-text">
+                  <h2>DevLens</h2>
+                  <p>
+                    Quickly inspect page layouts and visualize element
+                    boundaries.
+                  </p>
+                </div>
+              </div>
+              <div class="toggle">
+                <button class="toggle__remove">Remove</button>
+
+                <button class="toggle__button active">
+                    <span class="toggle__icon toggle__icon--sun"></span>
+                    <span class="toggle__icon toggle__icon--moon"></span>
+                  </button>
+                </button>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card__details">
+                <div class="card__details-icon">
+                  <img
+                    src="./assets/images/logo-style-spy.svg"
+                    alt="Extension icon"
+                    class="card__details-icon-img"
+                  />
+                </div>
+                <div class="card__details-text">
+                  <h2>StyleSpy</h2>
+                  <p>
+                    Instantly analyze and copy CSS from any webpage element.
+                  </p>
+                </div>
+              </div>
+              <div class="toggle">
+                <button class="toggle__remove">Remove</button>
+
+                <button class="toggle__button active" >
+                    <span class="toggle__icon toggle__icon--sun"></span>
+                    <span class="toggle__icon toggle__icon--moon"></span>
+                  </button>
+                </button>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card__details">
+                <div class="card__details-icon">
+                  <img
+                    src="./assets/images/logo-speed-boost.svg"
+                    alt="Extension icon"
+                    class="card__details-icon-img"
+                  />
+                </div>
+                <div class="card__details-text">
+                  <h2>SpeedBoost</h2>
+                  <p>
+                    Optimizes browser resource usage to accelerate page loading.
+                  </p>
+                </div>
+              </div>
+              <div class="toggle">
+                <button class="toggle__remove">Remove</button>
+
+                <button class="toggle__button" >
+                    <span class="toggle__icon toggle__icon--sun"></span>
+                    <span class="toggle__icon toggle__icon--moon"></span>
+                  </button>
+                </button>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card__details">
+                <div class="card__details-icon">
+                  <img
+                    src="./assets/images/logo-json-wizard.svg"
+                    alt="Extension icon"
+                    class="card__details-icon-img"
+                  />
+                </div>
+                <div class="card__details-text">
+                  <h2>JSONWizard</h2>
+                  <p>
+                    Formats, validates, and prettifies JSON responses in-browser.
+                  </p>
+                </div>
+              </div>
+              <div class="toggle">
+                <button class="toggle__remove">Remove</button>
+
+                <button class="toggle__button active" >
+                    <span class="toggle__icon toggle__icon--sun"></span>
+                    <span class="toggle__icon toggle__icon--moon"></span>
+                  </button>
+                </button>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card__details">
+                <div class="card__details-icon">
+                  <img
+                    src="./assets/images/logo-tab-master-pro.svg"
+                    alt="Extension icon"
+                    class="card__details-icon-img"
+                  />
+                </div>
+                <div class="card__details-text">
+                  <h2>TabMaster Pro</h2>
+                  <p>
+                    Organizes browser tabs into groups and sessions.
+                  </p>
+                </div>
+              </div>
+              <div class="toggle">
+                <button class="toggle__remove">Remove</button>
+
+                <button class="toggle__button active" >
+                    <span class="toggle__icon toggle__icon--sun"></span>
+                    <span class="toggle__icon toggle__icon--moon"></span>
+                  </button>
+                </button>
+              </div>
+            </div>
+            
+            <div class="card">
+              <div class="card__details">
+                <div class="card__details-icon">
+                  <img
+                    src="./assets/images/logo-viewport-buddy.svg"
+                    alt="Extension icon"
+                    class="card__details-icon-img"
+                  />
+                </div>
+                <div class="card__details-text">
+                  <h2>ViewportBuddy</h2>
+                  <p>
+                    Simulates various screen resolutions directly within the browser.
+                  </p>
+                </div>
+              </div>
+              <div class="toggle">
+                <button class="toggle__remove">Remove</button>
+
+                <button class="toggle__button" >
+                    <span class="toggle__icon toggle__icon--sun"></span>
+                    <span class="toggle__icon toggle__icon--moon"></span>
+                  </button>
+                </button>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card__details">
+                <div class="card__details-icon">
+                  <img
+                    src="./assets/images/logo-markup-notes.svg"
+                    alt="Extension icon"
+                    class="card__details-icon-img"
+                  />
+                </div>
+                <div class="card__details-text">
+                  <h2>Markup Notes</h2>
+                  <p>
+                    Enables annotation and notes directly onto webpages for collaborative debugging.
+                  </p>
+                </div>
+              </div>
+              <div class="toggle">
+                <button class="toggle__remove">Remove</button>
+
+                <button class="toggle__button active" >
+                    <span class="toggle__icon toggle__icon--sun"></span>
+                    <span class="toggle__icon toggle__icon--moon"></span>
+                  </button>
+                </button>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card__details">
+                <div class="card__details-icon">
+                  <img
+                    src="./assets/images/logo-grid-guides.svg"
+                    alt="Extension icon"
+                    class="card__details-icon-img"
+                  />
+                </div>
+                <div class="card__details-text">
+                  <h2>GridGuides</h2>
+                  <p>
+                    Overlay customizable grids and alignment guides on any webpage.
+                  </p>
+                </div>
+              </div>
+              <div class="toggle">
+                <button class="toggle__remove">Remove</button>
+
+                <button class="toggle__button" >
+                    <span class="toggle__icon toggle__icon--sun"></span>
+                    <span class="toggle__icon toggle__icon--moon"></span>
+                  </button>
+                </button>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card__details">
+                <div class="card__details-icon">
+                  <img
+                    src="./assets/images/logo-palette-picker.svg"
+                    alt="Extension icon"
+                    class="card__details-icon-img"
+                  />
+                </div>
+                <div class="card__details-text">
+                  <h2>Palette Picker</h2>
+                  <p>
+                    Instantly extracts color palettes from any webpage.
+                  </p>
+                </div>
+              </div>
+              <div class="toggle">
+                <button class="toggle__remove">Remove</button>
+
+                <button class="toggle__button active" >
+                    <span class="toggle__icon toggle__icon--sun"></span>
+                    <span class="toggle__icon toggle__icon--moon"></span>
+                  </button>
+                </button>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card__details">
+                <div class="card__details-icon">
+                  <img
+                    src="./assets/images/logo-link-checker.svg"
+                    alt="Extension icon"
+                    class="card__details-icon-img"
+                  />
+                </div>
+                <div class="card__details-text">
+                  <h2>LinkChecker</h2>
+                  <p>
+                    Scans and highlights broken links on any page.
+                  </p>
+                </div>
+              </div>
+              <div class="toggle">
+                <button class="toggle__remove">Remove</button>
+
+                <button class="toggle__button active" >
+                    <span class="toggle__icon toggle__icon--sun"></span>
+                    <span class="toggle__icon toggle__icon--moon"></span>
+                  </button>
+                </button>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card__details">
+                <div class="card__details-icon">
+                  <img
+                    src="./assets/images/logo-dom-snapshot.svg"
+                    alt="Extension icon"
+                    class="card__details-icon-img"
+                  />
+                </div>
+                <div class="card__details-text">
+                  <h2>DOM Snapshot</h2>
+                  <p>
+                    Capture and export DOM structures quickly.
+                  </p>
+                </div>
+              </div>
+              <div class="toggle">
+                <button class="toggle__remove">Remove</button>
+
+                <button class="toggle__button" >
+                    <span class="toggle__icon toggle__icon--sun"></span>
+                    <span class="toggle__icon toggle__icon--moon"></span>
+                  </button>
+                </button>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card__details">
+                <div class="card__details-icon">
+                  <img
+                    src="./assets/images/logo-console-plus.svg"
+                    alt="Extension icon"
+                    class="card__details-icon-img"
+                  />
+                </div>
+                <div class="card__details-text">
+                  <h2>ConsolePlus</h2>
+                  <p>
+                    Enhanced developer console with advanced filtering and logging.
+                  </p>
+                </div>
+              </div>
+              <div class="toggle">
+                <button class="toggle__remove">Remove</button>
+
+                <button class="toggle__button active" >
+                    <span class="toggle__icon toggle__icon--sun"></span>
+                    <span class="toggle__icon toggle__icon--moon"></span>
+                  </button>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a href="#">Collins Paul</a>.
+    </div>
+  </body>
+</html>

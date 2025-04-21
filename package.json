@@ -1,0 +1,16 @@
+{
+  "name": "browser-extensions-manager-ui-main",
+  "version": "1.0.0",
+  "description": "![Design preview for the Browser extensions manager UI coding challenge](./preview.jpg)",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "author": "Collins Paul",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.14.4",
+    "parcel": "^2.14.4",
+    "sass": "^1.86.3"
+  }
+}
