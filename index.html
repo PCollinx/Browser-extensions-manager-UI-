@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- displays site properly based on user's device -->
     <link rel="stylesheet" href="./sass/style.scss" />
-    <script type="module" src="script.js"></script>
+    <script defer src="script.js"></script>
     <link
       rel="icon"
       type="image/png"
@@ -29,8 +29,14 @@
           <button class="nav__option">
             <img
               src="./assets/images/icon-sun.svg"
-              alt="Toggle light/dark theme"
-              class="nav__option-theme" id="theme-toggle"
+              alt="Light mode icon"
+              class="nav__option-theme nav__option-theme--sun"
+            />
+            <img
+              src="./assets/images/icon-moon.svg"
+              alt="Dark mode icon"
+              class="nav__option-theme nav__option-theme--moon"
+              style="display: none;"
             />
           </button>
         </div>

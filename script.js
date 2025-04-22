@@ -6,19 +6,23 @@ const cards = Array.from(document.querySelectorAll(".card")); // Convert NodeLis
 const removeBtn = document.querySelectorAll(".toggle__remove");
 const themeToggleButton = document.querySelector(".nav__option");
 const themeIcon = themeToggleButton.querySelector(".nav__option-theme");
-const themeToggle = document.getElementById("theme-toggle");
 const body = document.querySelector("body");
 const logo = document.querySelector(".nav__logo");
+const sunIcon = document.querySelector(".nav__option-theme--sun");
+const moonIcon = document.querySelector(".nav__option-theme--moon");
 
 // Theme toggle functionality
 themeToggleButton.addEventListener("click", () => {
   body.classList.toggle("light-theme");
 
-  //   const isLightTheme = body.classList.contains("light-theme");
-  //   themeToggle.src = isLightTheme
-  //     ? "./assets/images/icon-moon.svg"
-  //     : "./assets/images/icon-sun.svg";
-  //   themeIcon.alt = isLightTheme ? "Moon icon" : "Sun icon";
+  const isLightTheme = body.classList.contains("light-theme");
+  if (isLightTheme) {
+    sunIcon.style.display = "none"; // Hide sun icon
+    moonIcon.style.display = "block"; // Show moon icon
+  } else {
+    sunIcon.style.display = "block"; // Show sun icon
+    moonIcon.style.display = "none"; // Hide moon icon
+  }
 });
 
 let removedCards = []; // Array to store removed cards
