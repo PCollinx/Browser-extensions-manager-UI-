@@ -1,7 +1,7 @@
-// Import dependencies
-@import "fonts";
-@import "variables";
-@import "mixins";
+// Import dependencies using @use
+@use "fonts";
+@use "variables" as *; // Use `as *` to avoid prefixing variables
+@use "mixins";
 
 // General styles
 body {
@@ -9,8 +9,8 @@ body {
   font-size: 14px;
   margin: 0;
   padding: 0;
-  background-color: $neutral-900;
-  color: $neutral-0;
+  background-color: $neutral-900; // Variable from variables.scss
+  color: $neutral-0; // Variable from variables.scss
 }
 
 // Container
@@ -20,10 +20,10 @@ body {
   margin: 0 auto;
   padding: 2rem 3rem;
 
-  @include small-screen {
+  @include mixins.small-screen {
     padding: 1rem 2rem;
   }
-  @include small-mobile {
+  @include mixins.small-mobile {
     padding: 0.5rem 1rem;
   }
 }
@@ -82,7 +82,7 @@ body {
     }
   }
 
-  @include small-screen {
+  @include mixins.small-screen {
     flex-wrap: nowrap; // Prevent wrapping on small screens
     flex-direction: row; // Ensure row layout
     justify-content: space-between;
@@ -97,7 +97,7 @@ body {
     }
   }
 
-  @include small-mobile {
+  @include mixins.small-mobile {
     flex-wrap: nowrap; // Prevent wrapping on very small screens
     flex-direction: row; // Ensure row layout
     justify-content: space-between;
@@ -125,7 +125,7 @@ body {
   text-align: center;
   margin-bottom: 1rem;
 
-  @include small-mobile {
+  @include mixins.small-mobile {
     flex-direction: column;
     align-items: flex-start;
   }
@@ -166,7 +166,7 @@ body {
     }
   }
 
-  @include small-screen {
+  @include mixins.small-screen {
     h1 {
       font-size: 1.2rem;
     }
@@ -176,7 +176,7 @@ body {
     }
   }
 
-  @include small-mobile {
+  @include mixins.small-mobile {
     flex-direction: column;
     align-items: flex-start;
 
@@ -235,23 +235,23 @@ body {
       }
     }
 
-    @include small-screen {
+    @include mixins.small-screen {
       min-height: 100px; // Reduce card height
       padding: 0.5rem;
     }
 
-    @include small-mobile {
+    @include mixins.small-mobile {
       min-height: 80px; // Further reduce card height
       padding: 0.3rem;
     }
   }
 
-  @include small-screen {
+  @include mixins.small-screen {
     grid-template-columns: repeat(2, 1fr); // 2 columns instead of 3
     gap: 0.5rem;
   }
 
-  @include small-mobile {
+  @include mixins.small-mobile {
     grid-template-columns: 1fr; // Single column layout
     gap: 0.3rem;
   }
@@ -338,7 +338,7 @@ body {
     }
   }
 
-  @include small-mobile {
+  @include mixins.small-mobile {
     &__button {
       width: 30px;
       height: 15px;
