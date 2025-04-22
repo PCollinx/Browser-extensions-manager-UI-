@@ -14,15 +14,11 @@ const logo = document.querySelector(".nav__logo");
 themeToggleButton.addEventListener("click", () => {
   body.classList.toggle("light-theme");
 
-  const isLightTheme = body.classList.contains("light-theme");
-  themeToggle.src = isLightTheme
-    ? "./assets/images/icon-moon.svg"
-    : "./assets/images/icon-sun.svg";
-  themeIcon.alt = isLightTheme ? "Moon icon" : "Sun icon";
-  logo.src = isLightTheme
-    ? "./assets/images/logo-light.svg"
-    : "./assets/images/logo-dark.svg";
-  logo.alt = isLightTheme ? "Light theme logo" : "Dark theme logo";
+  //   const isLightTheme = body.classList.contains("light-theme");
+  //   themeToggle.src = isLightTheme
+  //     ? "./assets/images/icon-moon.svg"
+  //     : "./assets/images/icon-sun.svg";
+  //   themeIcon.alt = isLightTheme ? "Moon icon" : "Sun icon";
 });
 
 let removedCards = []; // Array to store removed cards
